@@ -1,4 +1,4 @@
-// Coppyright Croop
+// Copyright Croop
 
 #pragma once
 
@@ -17,5 +17,6 @@ public:
 protected:
 	virtual void BeginPlay() override;
 
-
+	UPROPERTY(EditAnywhere, Category="Combat") 
+	TObjectPtr<USkeletalMeshComponent> Weapon;
 };
