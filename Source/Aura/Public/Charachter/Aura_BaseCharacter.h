@@ -13,10 +13,12 @@ class AURA_API AAura_BaseCharacter : public ACharacter
 
 public:
 	AAura_BaseCharacter();
+	
 
 protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere, Category="Combat") 
 	TObjectPtr<USkeletalMeshComponent> Weapon;
+
 };
