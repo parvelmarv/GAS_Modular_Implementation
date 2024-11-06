@@ -28,4 +28,5 @@ class AURA_API AAuraPlayerState : public APlayerState, public IAbilitySystemInte
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
+	
 };

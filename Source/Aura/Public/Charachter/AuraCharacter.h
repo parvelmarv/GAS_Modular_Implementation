@@ -24,8 +24,9 @@ protected:
 private:
 	UPROPERTY(VisibleAnywhere, Category = "Component")
 	class USpringArmComponent* SpringArm;
+
 	UPROPERTY(VisibleAnywhere, Category = "Component")
 	class UCameraComponent* Camera;
-
+	
 	void InitAbilityActorInfo();
 };
