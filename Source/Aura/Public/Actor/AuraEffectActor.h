@@ -3,10 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AbilitySystemComponent.h"
+#include "GameplayEffectTypes.h"
 #include "GameFramework/Actor.h"
 #include "AuraEffectActor.generated.h"
 
 
+class UAbilitySystemComponent;
 class UGameplayEffect;
 
 UENUM()
@@ -58,6 +61,7 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Applied Effects")
 	EEffectApplicationPolicy DurationGameplayApplicationPolicy = EEffectApplicationPolicy::DoNotApply;
+	// Currently no DurationGameplayRemoval policy. All Duration effects are removed by themselves
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Applied Effects")
 	TSubclassOf<UGameplayEffect> InfiniteGameplayEffectClass;
@@ -67,5 +71,6 @@ protected:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category= "Applied Effects")
 	EEffectRemovalPolicy InfiniteEffectRemovalPolicy = EEffectRemovalPolicy::RemoveOnEndOverlap;
-	
+
+	TMap<FActiveGameplayEffectHandle, UAbilitySystemComponent*> ActiveEffectHandles;
 };
